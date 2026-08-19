@@ -22,7 +22,7 @@ $contentChecks = @('Kunal S. Zarodiya', 'PhishZero', 'CyberDragon', '@kunal_zaro
 foreach ($content in $contentChecks) {
   if ($html -notmatch [regex]::Escape($content)) { Write-Error "Missing supplied content: $content"; exit 1 }
 }
-$interactionChecks = @('href="#home"', 'href="#about"', 'href="#skills"', 'href="#projects"', 'href="#contact"', 'href="#instagram"', 'https://www.instagram.com/kunal_zarodiya/', 'target="_blank" rel="noopener noreferrer"', 'data-placeholder-action="Resume file"', 'data-placeholder-action="PhishZero GitHub repository"', 'data-placeholder-action="PhishZero live demo"', 'id="contact-form"', 'id="form-status"', 'aria-live="polite"')
+$interactionChecks = @('href="#home"', 'href="#about"', 'href="#skills"', 'href="#projects"', 'href="#contact"', 'href="#instagram"', 'https://www.instagram.com/kunal_zarodiya/', 'https://kszarodiya-debug.github.io/Phishzero/', 'target="_blank" rel="noopener noreferrer"', 'data-placeholder-action="Resume file"', 'data-placeholder-action="PhishZero GitHub repository"', 'id="contact-form"', 'id="form-status"', 'aria-live="polite"')
 foreach ($interaction in $interactionChecks) {
   if ($html -notmatch [regex]::Escape($interaction)) { Write-Error "Missing interaction wiring: $interaction"; exit 1 }
 }

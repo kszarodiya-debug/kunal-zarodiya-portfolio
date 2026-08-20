@@ -18,11 +18,11 @@ foreach ($check in $checks) {
   if ($html -notmatch [regex]::Escape($check.Pattern)) { Write-Error "Missing $($check.Name) section"; exit 1 }
 }
 if ($html -notmatch 'PLACEHOLDER') { Write-Error 'Placeholder fields are not marked'; exit 1 }
-$contentChecks = @('Kunal S. Zarodiya', 'PhishZero', 'CyberDragon', '@kunal_zarodiya', 'C Programming', 'Java', 'Government Polytechnic Murtizapur', 'Kali Linux', 'Wireshark')
+$contentChecks = @('Kunal S. Zarodiya', 'PhishZero', 'CyberSathi', 'Additional projects', 'CyberDragon', '@kunal_zarodiya', 'C Programming', 'Java', 'Government Polytechnic Murtizapur', 'Kali Linux', 'Wireshark')
 foreach ($content in $contentChecks) {
   if ($html -notmatch [regex]::Escape($content)) { Write-Error "Missing supplied content: $content"; exit 1 }
 }
-$interactionChecks = @('href="#home"', 'href="#about"', 'href="#skills"', 'href="#projects"', 'href="#contact"', 'href="#instagram"', 'https://www.instagram.com/kunal_zarodiya/', 'https://kszarodiya-debug.github.io/Phishzero/', 'target="_blank" rel="noopener noreferrer"', 'data-placeholder-action="Resume file"', 'data-placeholder-action="PhishZero GitHub repository"', 'id="contact-form"', 'id="form-status"', 'aria-live="polite"')
+$interactionChecks = @('href="#home"', 'href="#about"', 'href="#skills"', 'href="#projects"', 'href="#contact"', 'href="#instagram"', 'https://www.instagram.com/kunal_zarodiya/', 'https://kszarodiya-debug.github.io/Phishzero/', 'https://kszarodiya-debug.github.io/cybersathi/', 'target="_blank" rel="noopener noreferrer"', 'data-placeholder-action="Resume file"', 'data-placeholder-action="PhishZero GitHub repository"', 'data-placeholder-action="CyberSathi GitHub repository"', 'id="contact-form"', 'id="form-status"', 'aria-live="polite"')
 foreach ($interaction in $interactionChecks) {
   if ($html -notmatch [regex]::Escape($interaction)) { Write-Error "Missing interaction wiring: $interaction"; exit 1 }
 }
